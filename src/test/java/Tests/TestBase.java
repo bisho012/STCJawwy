@@ -1,6 +1,6 @@
 package Tests;
 
-import Pages.MainPage;
+import Pages.SubscriptionPage;
 import com.google.common.collect.ImmutableMap;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
@@ -21,9 +21,9 @@ import static com.github.automatedowl.tools.AllureEnvironmentWriter.allureEnviro
 
 public class TestBase {
     WebDriver driver;
-    MainPage mainPage;
+    SubscriptionPage subscriptionPage;
 
-    private final String url = "https://magento.softwaretestingboard.com/";
+    private final String url = "https://subscribe.stctv.com/";
 
     @BeforeSuite
     void setEnvironment() {
@@ -38,13 +38,13 @@ public class TestBase {
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             driver.navigate().to(url);
-            mainPage = new MainPage(driver);
+            subscriptionPage = new SubscriptionPage(driver);
         } else if (browserName.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
             driver.manage().window().maximize();
             driver.navigate().to(url);
-            mainPage = new MainPage(driver);
+            subscriptionPage = new SubscriptionPage(driver);
         }
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }
@@ -68,32 +68,5 @@ public class TestBase {
     public void refresh() {
         driver.navigate().refresh();
     }
-
-//    private void onGenerateAllureReport() {
-//        Runtime.getRuntime().addShutdownHook(new Thread() {
-//            public void run() {
-//                try {
-//                    final List<Extension> extensions;
-//                    extensions = (List<Extension>) Arrays.asList(new JacksonContext(), new MarkdownContext(),
-//                            new FreemarkerContext(), new RandomUidContext(), new MarkdownDescriptionsPlugin(),
-//                            new RetryPlugin(), new RetryTrendPlugin(), new TagsPlugin(),
-//                            new SeverityPlugin(), new OwnerPlugin(), new IdeaLinksPlugin(), new CategoriesPlugin(),
-//                            new CategoriesTrendPlugin(), new HistoryPlugin(), new HistoryTrendPlugin(),
-//                            new DurationPlugin(), new DurationTrendPlugin(), new StatusChartPlugin(),
-//                            new TimelinePlugin(), new SuitesPlugin(), new TestsResultsPlugin(),
-//                            new AttachmentsPlugin(), new MailPlugin(), new InfluxDbExportPlugin(),
-//                            new PrometheusExportPlugin(), new SummaryPlugin(), new ExecutorPlugin(),
-//                            new LaunchPlugin(), new Allure1Plugin(), new Allure1EnvironmentPlugin(),
-//                            new Allure2Plugin(), new ReportWebPlugin());
-//                    Configuration configuration = (new ConfigurationBuilder()).fromExtensions(extensions).build();
-//                    Path resultDi = Paths.get("user.dir/allure-results");
-//                    Path outDir = Paths.get("target/allure-report");
-//                    new ReportGenerator(configuration).generate(outDir, resultDi);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//    }
 
 }
