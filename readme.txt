@@ -12,7 +12,7 @@
 
 ## Requirements for Installation
 
-- Download and Install Java JDK 17.
+- Download and Install Java JDK 19.
 - Set Up Java Environment Variable.
 - Download and Install Maven.
 - Set up Maven Environment Variable.
@@ -32,18 +32,14 @@
 
 > The page base contains page driver, Actions and Explicit wait.
 
-> The Test Base contains driver, web driver manager , open the browser , close the browser and screen shot for Failure.
+> The Test Base contains driver, web driver manager , open the browser and close the browser.
 
 ## Usage Method
 
 > Right click the Test case  and select "Run" or "Debug" to start the test by TestNG.
-
-> Project uses Maven so you can use commend line(mvn clean test -P( give profile youe need) from cmd.
 
 > You can run the tests from the Command Shell.
 
 ## Reporting
 
 > To get Allure report you need to run the commend line(allure.bat serve allure-results) or use the shell file.
-
-> You can get TestNG report from Test-output (index.html).

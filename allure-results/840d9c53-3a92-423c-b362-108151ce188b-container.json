@@ -1,1 +1,0 @@
-{"uuid":"840d9c53-3a92-423c-b362-108151ce188b","name":"Tests.SignInTestCases","children":["f0161bd8-01d0-470d-ab3a-4c2d01813df9"],"befores":[],"afters":[{"name":"generateReport","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1668258563142,"stop":1668258563142}],"start":1668258534506,"stop":1668258563142}
