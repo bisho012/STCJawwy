@@ -1,4 +1,8 @@
 # STC TV
+
+## USE VPN WHILE RUNNING THIS TESTS ... I USED WINDSCRIBE
+
+
 ## Selenium-Java-Allure Framework
 > A Maven framework in which to build Selenium tests written in Java with Allure reports of test results.
 
